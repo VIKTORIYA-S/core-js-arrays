@@ -9,6 +9,7 @@
 
 /**
  * Creates an array of integers from the specified start to end (inclusive).
+ * Создает массив целых чисел от указанного начала до конца (включительно).
  *
  * @param {number} start - The first number of an array.
  * @param {number} end - The last number of an array.
@@ -27,6 +28,8 @@ function getIntervalArray(/* start, end */) {
 /**
  * Returns a new array where each element is the sum of the corresponding elements
  * from two arrays. Arrays can have different lengths.
+ * Возвращает новый массив, где каждый элемент представляет собой сумму соответствующих элементов.
+ * из двух массивов. Массивы могут иметь разную длину.
  *
  * @param {array} arr1 - The first array.
  * @param {array} arr2 - The second array.
@@ -43,6 +46,7 @@ function sumArrays(/* arr1, arr2 */) {
 
 /**
  * Returns an index of the specified element in array or -1 if element is not found.
+ * Возвращает индекс указанного элемента в массиве или -1, если элемент не найден.
  *
  * @param {array} arr - The input array.
  * @param {any} value - Element to search.
@@ -53,12 +57,13 @@ function sumArrays(/* arr1, arr2 */) {
  *    findElement(['Array', 'Number', 'string'], 'Date') => -1
  *    findElement([0, 1, 2, 3, 4, 5], 5) => 5
  */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
+function findElement(arr, value) {
+  return arr.indexOf(value);
 }
 
 /**
  * Returns a number of all occurrences of the specified item in an array.
+ * Возвращает количество всех вхождений указанного элемента в массив.
  *
  * @param {array} arr - The input array.
  * @param {any} item - Element to search.
@@ -78,6 +83,8 @@ function findAllOccurrences(/* arr, item */) {
 /**
  * Removes falsy values from the specified array.
  * Falsy values: false, null, 0, "", undefined, and NaN.
+ * Удаляет ложные значения из указанного массива.
+ * Ложные значения: false, null, 0, «», undefined и NaN.
  *
  * @param {array} arr - The input array.
  * @return {array} - The array without falsy values.
