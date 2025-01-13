@@ -107,6 +107,7 @@ function removeFalsyValues(arr) {
 
 /**
  * Returns an array containing the lengths of each string in a specified array of strings.
+ * Возвращает массив, содержащий длины каждой строки в указанном массиве строк.
  *
  * @param {array} arr - The input array.
  * @return {array} - The array of string lengths.
@@ -115,13 +116,15 @@ function removeFalsyValues(arr) {
  *    getStringsLength([ '', 'a', 'bc', 'def', 'ghij' ]) => [ 0, 1, 2, 3, 4 ]
  *    getStringsLength([ 'angular', 'react', 'ember' ]) => [ 7, 5, 5 ]
  */
-function getStringsLength(/* arr */) {
-  throw new Error('Not implemented');
+function getStringsLength(arr) {
+  return arr.map((str) => str.length);
 }
 
 /**
  * Returns the average of all items in the specified array of numbers.
  * The result should be rounded to two decimal places.
+ * Возвращает среднее значение всех элементов в указанном массиве чисел.
+ * Результат следует округлить до двух знаков после запятой.
  *
  * @param {array} arr - The input array
  * @return {number} - The average of all items
@@ -133,8 +136,10 @@ function getStringsLength(/* arr */) {
  *   getAverage([ 1, 10, 100, 1000 ])  => 277,75
  *   getAverage([ 2, 3, 3 ])  => 2,67
  */
-function getAverage(/* arr */) {
-  throw new Error('Not implemented');
+function getAverage(arr) {
+  const sum = arr.reduce((acc, num) => acc + num, 0);
+  const average = sum / arr.length;
+  return parseFloat(average.toFixed(2));
 }
 
 /**
@@ -147,12 +152,18 @@ function getAverage(/* arr */) {
  *    isSameLength(['orange', 'banana', 'cherry']) => true
  *    isSameLength(['cat', 'dog', 'elephant']) => false
  */
-function isSameLength(/* arr */) {
-  throw new Error('Not implemented');
+function isSameLength(arr) {
+  if (arr.length === 0) {
+    return true;
+  }
+  const [first, ...rest] = arr;
+  const { length } = first;
+  return rest.every(({ length: len }) => len === length);
 }
 
 /**
  * Checks if there are elements in the array where the value is equal to its index.
+ * Проверяет, есть ли в массиве элементы, значение которых равно его индексу.
  *
  * @param {array} arr - The array of elements to be checked.
  * @return {boolean} - True if there are elements with value equal to their index, false otherwise.
@@ -162,12 +173,13 @@ function isSameLength(/* arr */) {
  *    isValueEqualsIndex([2, 1, 0, 4, 5]) => true
  *    isValueEqualsIndex([10, 20, 30, 40, 50]) => false
  */
-function isValueEqualsIndex(/* arr */) {
-  throw new Error('Not implemented');
+function isValueEqualsIndex(arr) {
+  return arr.every((value, index) => value === index);
 }
 
 /**
  * Inserts the item into specified array at specified index.
+ * Вставляет элемент в указанный массив по указанному индексу.
  *
  * @param {array} arr - The input array.
  * @param {any} item - The item to insert.
@@ -177,12 +189,13 @@ function isValueEqualsIndex(/* arr */) {
  *    insertItem([ 1, 3, 4, 5 ], 2, 1)  => [ 1, 2, 3, 4, 5 ]
  *    insertItem([ 1, 'b', 'c'], 'x', 0) => [ 'x', 1, 'b', 'c' ]
  */
-function insertItem(/* arr, item, index */) {
-  throw new Error('Not implemented');
+function insertItem(arr, item, index) {
+  return arr.splice(index, 0, item);
 }
 
 /**
  * Returns the n first items of the specified array.
+ * Возвращает n первых элементов указанного массива.
  *
  * @param {array} arr - The input array.
  * @param {number} n - Number of items.
@@ -192,8 +205,8 @@ function insertItem(/* arr, item, index */) {
  *    getHead([ 'a', 'b', 'c', 'd'], 3) => [ 'a', 'b', 'c' ]
  *    getHead([ 'a', 'b', 'c', 'd'], 0) => []
  */
-function getHead(/* arr, n */) {
-  throw new Error('Not implemented');
+function getHead(arr, n) {
+  return arr.slice(0, n);
 }
 
 /**
