@@ -9,7 +9,7 @@
 
 /**
  * Creates an array of integers from the specified start to end (inclusive).
- * Создает массив целых чисел от указанного начала до конца (включительно).
+ *
  *
  * @param {number} start - The first number of an array.
  * @param {number} end - The last number of an array.
@@ -28,8 +28,7 @@ function getIntervalArray(start, end) {
 /**
  * Returns a new array where each element is the sum of the corresponding elements
  * from two arrays. Arrays can have different lengths.
- * Возвращает новый массив, где каждый элемент представляет собой сумму соответствующих элементов.
- * из двух массивов. Массивы могут иметь разную длину.
+ *
  *
  * @param {array} arr1 - The first array.
  * @param {array} arr2 - The second array.
@@ -46,7 +45,7 @@ function sumArrays(/* arr1, arr2 */) {
 
 /**
  * Returns an index of the specified element in array or -1 if element is not found.
- * Возвращает индекс указанного элемента в массиве или -1, если элемент не найден.
+ *
  *
  * @param {array} arr - The input array.
  * @param {any} value - Element to search.
@@ -63,7 +62,7 @@ function findElement(arr, value) {
 
 /**
  * Returns a number of all occurrences of the specified item in an array.
- * Возвращает количество всех вхождений указанного элемента в массив.
+ *
  *
  * @param {array} arr - The input array.
  * @param {any} item - Element to search.
@@ -103,7 +102,7 @@ function removeFalsyValues(arr) {
 
 /**
  * Returns an array containing the lengths of each string in a specified array of strings.
- * Возвращает массив, содержащий длины каждой строки в указанном массиве строк.
+ *
  *
  * @param {array} arr - The input array.
  * @return {array} - The array of string lengths.
@@ -119,8 +118,7 @@ function getStringsLength(arr) {
 /**
  * Returns the average of all items in the specified array of numbers.
  * The result should be rounded to two decimal places.
- * Возвращает среднее значение всех элементов в указанном массиве чисел.
- * Результат следует округлить до двух знаков после запятой.
+ *
  *
  * @param {array} arr - The input array
  * @return {number} - The average of all items
@@ -157,7 +155,7 @@ function isSameLength(arr) {
 
 /**
  * Checks if there are elements in the array where the value is equal to its index.
- * Проверяет, есть ли в массиве элементы, значение которых равно его индексу.
+ *
  *
  * @param {array} arr - The array of elements to be checked.
  * @return {boolean} - True if there are elements with value equal to their index, false otherwise.
@@ -173,7 +171,7 @@ function isValueEqualsIndex(arr) {
 
 /**
  * Inserts the item into specified array at specified index.
- * Вставляет элемент в указанный массив по указанному индексу.
+ *
  *
  * @param {array} arr - The input array.
  * @param {any} item - The item to insert.
@@ -189,7 +187,7 @@ function insertItem(arr, item, index) {
 
 /**
  * Returns the n first items of the specified array.
- * Возвращает n первых элементов указанного массива.
+ *
  *
  * @param {array} arr - The input array.
  * @param {number} n - Number of items.
@@ -205,7 +203,7 @@ function getHead(arr, n) {
 
 /**
  * Returns the n last items of the specified array.
- * Возвращает n последних элементов указанного массива.
+ *
  *
  * @param {array} arr - The input array.
  * @param {number} n - Number of items.
@@ -222,8 +220,7 @@ function getTail(/* arr, n */) {
 /**
  * Returns the doubled array - elements of the specified array
  * are repeated twice using original order.
- * Возвращает удвоенный массив — элементы указанного массива
-повторяются дважды, используя исходный порядок.
+ *
  *
  * @param {array} arr - The input array.
  * @return {array} - The doubled array.
@@ -239,7 +236,7 @@ function doubleArray(arr) {
 
 /**
  * Concatenates all elements from specified array into single string with ',' delimiter.
- * Объединяет все элементы указанного массива в одну строку с разделителем «,».
+ *
  *
  * @param {array} arr - The input array.
  * @return {string} - The concatenated string.
@@ -255,7 +252,7 @@ function toStringList(arr) {
 
 /**
  * Returns array containing only unique values from the specified array.
- * Возвращает массив, содержащий только уникальные значения из указанного массива.
+ *
  *
  * @param {array} arr - The input array.
  * @return {array} - The array with unique values.
@@ -272,7 +269,7 @@ function distinct(arr) {
 
 /**
  * Creates an n-dimensional array and fills it with zeros.
- * Создает n-мерный массив и заполняет его нулями.
+ *
  *
  * @param {number} n - Depth of outter array (n > 0).
  * @param {number} size - Length of all arrays (size > 0).
@@ -323,8 +320,8 @@ function flattenArray(/* nestedArray */) {
  *   selectMany([[1, 2], [3, 4], [5, 6]], (x) => x) =>   [ 1, 2, 3, 4, 5, 6 ]
  *   selectMany(['one','two','three'], (x) => x.split('')) =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
-function selectMany(/* arr, childrenSelector */) {
-  throw new Error('Not implemented');
+function selectMany(arr, childrenSelector) {
+  return arr.flatMap(childrenSelector);
 }
 
 /**
@@ -340,8 +337,8 @@ function selectMany(/* arr, childrenSelector */) {
  *   calculateBalance([ [ 10, 8 ], [ 1, 5 ] ])  => (10 - 8) + (1 - 5) = 2 + -4 = -2
  *   calculateBalance([]) => 0
  */
-function calculateBalance(/* arr */) {
-  throw new Error('Not implemented');
+function calculateBalance(arr) {
+  return arr.reduce((acc, [income, expense]) => acc + (income - expense), 0);
 }
 
 /**
@@ -356,8 +353,10 @@ function calculateBalance(/* arr */) {
  *    createChunks(['a', 'b', 'c', 'd', 'e'], 2) => [['a', 'b'], ['c', 'd'], ['e']]
  *    createChunks([10, 20, 30, 40, 50], 1) => [[10], [20], [30], [40], [50]]
  */
-function createChunks(/* arr, chunkSize */) {
-  throw new Error('Not implemented');
+function createChunks(arr, chunkSize) {
+  return Array.from({ length: Math.ceil(arr.length / chunkSize) }, (_, i) =>
+    arr.slice(i * chunkSize, i * chunkSize + chunkSize)
+  );
 }
 
 /**
@@ -372,8 +371,8 @@ function createChunks(/* arr, chunkSize */) {
  *    generateOdds(2) => [ 1, 3 ]
  *    generateOdds(5) => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  return Array.from({ length: len }, (_, i) => i * 2 + 1);
 }
 
 /**
@@ -388,8 +387,8 @@ function generateOdds(/* len */) {
  *   getElementByIndices(['one','two','three'], [2]) => 'three'  (arr[2])
  *   getElementByIndices([[[ 1, 2, 3]]], [ 0, 0, 1 ]) => 2        (arr[0][0][1])
  */
-function getElementByIndices(/* arr, indices */) {
-  throw new Error('Not implemented');
+function getElementByIndices(arr, indices) {
+  return indices.reduce((acc, index) => acc[index], arr);
 }
 
 /**
@@ -404,8 +403,8 @@ function getElementByIndices(/* arr, indices */) {
  *  getFalsyValuesCount([ -1, 'false', null, 0 ]) => 2
  *  getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]) => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  return arr.reduce((count, value) => count + (!value ? 1 : 0), 0);
 }
 
 /**
@@ -426,8 +425,11 @@ function getFalsyValuesCount(/* arr */) {
  *                              [0,0,0,1,0],
  *                              [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  const matrix = Array.from({ length: n }, (_, i) =>
+    Array.from({ length: n }, (_, j) => (i === j ? 1 : 0))
+  );
+  return matrix;
 }
 
 /**
@@ -441,8 +443,10 @@ function getIdentityMatrix(/* n */) {
  *    getIndicesOfOddNumbers([2, 4, 6, 8, 10]) => []
  *    getIndicesOfOddNumbers([11, 22, 33, 44, 55]) => [0, 2, 4]
  */
-function getIndicesOfOddNumbers(/* numbers */) {
-  throw new Error('Not implemented');
+function getIndicesOfOddNumbers(numbers) {
+  return numbers
+    .map((_, index) => index)
+    .filter((index) => numbers[index] % 2 !== 0);
 }
 
 /**
@@ -455,8 +459,8 @@ function getIndicesOfOddNumbers(/* numbers */) {
  *    getHexRGBValues([ 0, 255, 16777215]) => [ '#000000', '#0000FF', '#FFFFFF' ]
  *    getHexRGBValues([]) => []
  */
-function getHexRGBValues(/* arr */) {
-  throw new Error('Not implemented');
+function getHexRGBValues(arr) {
+  return arr.map((value) => `#${value.toString(16)}`);
 }
 
 /**
@@ -473,8 +477,8 @@ function getHexRGBValues(/* arr */) {
  *   getMaxItems([ 10, 2, 7, 5, 3, -5 ], 3) => [ 10, 7, 5 ]
  *   getMaxItems([ 10, 10, 10, 10 ], 3) => [ 10, 10, 10 ]
  */
-function getMaxItems(/* arr, n */) {
-  throw new Error('Not implemented');
+function getMaxItems(arr, n) {
+  return arr.sort((a, b) => b - a).slice(0, n);
 }
 
 /**
@@ -489,8 +493,8 @@ function getMaxItems(/* arr, n */) {
  *    findCommonElements(['a', 'b', 'c'], ['b', 'c', 'd']) => [ 'b', 'c' ]
  *    findCommonElements([1, 2, 3], ['a', 'b', 'c']) => []
  */
-function findCommonElements(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function findCommonElements(arr1, arr2) {
+  return arr1.filter((value) => arr2.includes(value));
 }
 
 /**
@@ -504,8 +508,17 @@ function findCommonElements(/* arr1, arr2 */) {
  *    findLongestIncreasingSubsequence([3, 10, 2, 1, 20]) => 2
  *    findLongestIncreasingSubsequence([50, 3, 10, 7, 40, 80]) => 3
  */
-function findLongestIncreasingSubsequence(/* nums */) {
-  throw new Error('Not implemented');
+function findLongestIncreasingSubsequence(nums) {
+  if (nums.length === 0) return 0;
+  const dp = new Array(nums.length).fill(1);
+  for (let i = 1; i < nums.length; i + 1) {
+    for (let j = 0; j < i; j + 1) {
+      if (nums[i] > nums[j]) {
+        dp[i] = Math.max(dp[i], dp[j] + 1);
+      }
+    }
+  }
+  return Math.max(...dp);
 }
 
 /**
@@ -522,8 +535,8 @@ function findLongestIncreasingSubsequence(/* nums */) {
  *  propagateItemsByPositionIndex([ 'a', 'b', 'c', null ]) => [ 'a', 'b', 'b', 'c', 'c', 'c',  null, null, null, null ]
  *  propagateItemsByPositionIndex([ 1,2,3,4,5 ]) => [ 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5 ]
  */
-function propagateItemsByPositionIndex(/* arr */) {
-  throw new Error('Not implemented');
+function propagateItemsByPositionIndex(arr) {
+  return arr.flatMap((element, index) => Array(index + 1).fill(element));
 }
 
 /**
@@ -539,8 +552,8 @@ function propagateItemsByPositionIndex(/* arr */) {
  *    shiftArray(['a', 'b', 'c', 'd'], -1) => ['b', 'c', 'd', 'a']
  *    shiftArray([10, 20, 30, 40, 50], -3) => [40, 50, 10, 20, 30]
  */
-function shiftArray(/* arr, n */) {
-  throw new Error('Not implemented');
+function shiftArray(arr, n) {
+  return [...arr.slice(n), ...arr.slice(0, n)];
 }
 
 /**
