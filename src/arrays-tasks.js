@@ -221,14 +221,15 @@ function getHead(arr, n) {
  *    getTail([ 'a', 'b', 'c', 'd'], 3) => [ 'b', 'c', 'd' ]
  *    getTail([ 'a', 'b', 'c', 'd'], 0) => []
  */
-function getTail(arr, n) {
-  console.log(arr.slice(-n));
-  return arr.slice(-n);
+function getTail(/* arr, n */) {
+  throw new Error('Not implemented');
 }
 
 /**
  * Returns the doubled array - elements of the specified array
  * are repeated twice using original order.
+ * Возвращает удвоенный массив — элементы указанного массива
+повторяются дважды, используя исходный порядок.
  *
  * @param {array} arr - The input array.
  * @return {array} - The doubled array.
@@ -238,12 +239,13 @@ function getTail(arr, n) {
  *    doubleArray([0, 1, 2, 3, 4, 5]) => [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5]
  *    doubleArray([]) => []
  */
-function doubleArray(/* arr */) {
-  throw new Error('Not implemented');
+function doubleArray(arr) {
+  return arr.concat(arr);
 }
 
 /**
  * Concatenates all elements from specified array into single string with ',' delimiter.
+ * Объединяет все элементы указанного массива в одну строку с разделителем «,».
  *
  * @param {array} arr - The input array.
  * @return {string} - The concatenated string.
@@ -253,12 +255,13 @@ function doubleArray(/* arr */) {
  *    toStringList([1, 2, 3, 4, 5]) => '1,2,3,4,5'
  *    toStringList(['rock', 'paper', 'scissors']) => 'rock,paper,scissors'
  */
-function toStringList(/* arr */) {
-  throw new Error('Not implemented');
+function toStringList(arr) {
+  return arr.join(',');
 }
 
 /**
  * Returns array containing only unique values from the specified array.
+ * Возвращает массив, содержащий только уникальные значения из указанного массива.
  *
  * @param {array} arr - The input array.
  * @return {array} - The array with unique values.
@@ -269,12 +272,13 @@ function toStringList(/* arr */) {
  *   distinct([ 1, 1, 2, 2, 3, 3, 4, 4]) => [ 1, 2, 3, 4]
  *   distinct([]) => []
  */
-function distinct(/* arr */) {
-  throw new Error('Not implemented');
+function distinct(arr) {
+  return Array.from(new Set(arr));
 }
 
 /**
  * Creates an n-dimensional array and fills it with zeros.
+ * Создает n-мерный массив и заполняет его нулями.
  *
  * @param {number} n - Depth of outter array (n > 0).
  * @param {number} size - Length of all arrays (size > 0).
@@ -286,8 +290,15 @@ function distinct(/* arr */) {
  *    createNDimensionalArray(4, 2) => [[[[0, 0], [0, 0]], [[0, 0], [0, 0]]], [[[0, 0], [0, 0]], [[0, 0], [0, 0]]]]
  *    createNDimensionalArray(1, 1) => [0]
  */
-function createNDimensionalArray(/* n, size */) {
-  throw new Error('Not implemented');
+function createNDimensionalArray(n, size) {
+  if (n === 1) {
+    return new Array(size).fill(0);
+  }
+  const array = new Array(size);
+  for (let i = 0; i < size; i + 1) {
+    array[i] = createNDimensionalArray(n - 1, size);
+  }
+  return array;
 }
 
 /**
