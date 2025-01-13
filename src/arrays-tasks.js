@@ -78,6 +78,13 @@ function findElement(arr, value) {
  */
 function findAllOccurrences(/* arr, item */) {
   throw new Error('Not implemented');
+  // let count = 0;
+  // for (let i = 0; i < arr.length; i + 1) {
+  //   if (arr[i] === item) {
+  //     count += 1;
+  //   }
+  // }
+  // return count;
 }
 
 /**
@@ -94,8 +101,8 @@ function findAllOccurrences(/* arr, item */) {
  *    removeFalsyValues([ 1, 2, 3, 4, 5, 'false' ]) => [ 1, 2, 3, 4, 5, 'false' ]
  *    removeFalsyValues([ false, 0, NaN, '', undefined ]) => [ ]
  */
-function removeFalsyValues(/* arr */) {
-  throw new Error('Not implemented');
+function removeFalsyValues(arr) {
+  return arr.filter(Boolean);
 }
 
 /**
