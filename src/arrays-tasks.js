@@ -225,7 +225,7 @@ function getTail(arr, n) {
   console.log(arr.slice(-n));
   return arr.slice(-n);
 }
-getTail([ 'a', 'b', 'c', 'd'], 0)
+
 /**
  * Returns the doubled array - elements of the specified array
  * are repeated twice using original order.
