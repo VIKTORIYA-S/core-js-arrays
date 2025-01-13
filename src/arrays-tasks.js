@@ -136,10 +136,8 @@ function getStringsLength(arr) {
  *   getAverage([ 1, 10, 100, 1000 ])  => 277,75
  *   getAverage([ 2, 3, 3 ])  => 2,67
  */
-function getAverage(arr) {
-  const sum = arr.reduce((acc, num) => acc + num, 0);
-  const average = sum / arr.length;
-  return parseFloat(average.toFixed(2));
+function getAverage(/* arr */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -174,7 +172,7 @@ function isSameLength(arr) {
  *    isValueEqualsIndex([10, 20, 30, 40, 50]) => false
  */
 function isValueEqualsIndex(arr) {
-  return arr.every((value, index) => value === index);
+  return arr.some((value, index) => value === index);
 }
 
 /**
