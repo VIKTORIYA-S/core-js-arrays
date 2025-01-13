@@ -281,15 +281,8 @@ function distinct(arr) {
  *    createNDimensionalArray(4, 2) => [[[[0, 0], [0, 0]], [[0, 0], [0, 0]]], [[[0, 0], [0, 0]], [[0, 0], [0, 0]]]]
  *    createNDimensionalArray(1, 1) => [0]
  */
-function createNDimensionalArray(n, size) {
-  if (n === 1) {
-    return new Array(size).fill(0);
-  }
-  const array = new Array(size);
-  for (let i = 0; i < size; i + 1) {
-    array[i] = createNDimensionalArray(n - 1, size);
-  }
-  return array;
+function createNDimensionalArray(/* n, size */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -505,17 +498,8 @@ function findCommonElements(arr1, arr2) {
  *    findLongestIncreasingSubsequence([3, 10, 2, 1, 20]) => 2
  *    findLongestIncreasingSubsequence([50, 3, 10, 7, 40, 80]) => 3
  */
-function findLongestIncreasingSubsequence(nums) {
-  if (nums.length === 0) return 0;
-  const dp = new Array(nums.length).fill(1);
-  for (let i = 1; i < nums.length; i + 1) {
-    for (let j = 0; j < i; j + 1) {
-      if (nums[i] > nums[j]) {
-        dp[i] = Math.max(dp[i], dp[j] + 1);
-      }
-    }
-  }
-  return Math.max(...dp);
+function findLongestIncreasingSubsequence(/* nums */) {
+  throw new Error('Not implemented');
 }
 
 /**
